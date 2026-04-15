@@ -534,10 +534,20 @@ function delOcorr(id) {
   });
 }
 
-document.getElementById("modal").addEventListener("click", function(e){ if(e.target===this) fecharModal(); });
 
-// -- INIT ------------------------------------------------------
-findOrCreateBin(function(){ renderDash(); });
+window.goPage = goPage;
+window.onMesChange = onMesChange;
+window.sincronizar = sincronizar;
+window.abrirModal = abrirModal;
+window.fecharModal = fecharModal;
+window.salvarOcorr = salvarOcorr;
+window.delOcorr = delOcorr;
+window.renderOcorr = renderOcorr;
+
+window.onload = function() {
+  document.getElementById("modal").addEventListener("click", function(e){ if(e.target===this) fecharModal(); });
+  findOrCreateBin(function(){ renderDash(); });
+};
 </script>
 </body>
 </html>
